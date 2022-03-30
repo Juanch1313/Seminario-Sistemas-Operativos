@@ -194,7 +194,8 @@ namespace LotesWPF
                 {
                     proceso.TransTime++;
                     proceso.MaxTime--;
-                    if(proceso.TransTime >= proceso.MaxTime) {
+                    if(proceso.MaxTime <= 0)
+                    {
                         proceso.IsFinish = true;
                         break;
                     }
@@ -235,7 +236,7 @@ namespace LotesWPF
 
                     //Actualizamos las etiquetas de tiempo
                     TbTemporizador.Text = "Temporizador Global: " + Time.ToString();
-                    TbTimeRes.Text = "Tiempo restante: " + (proceso.MaxTime - Timer).ToString();
+                    TbTimeRes.Text = "Tiempo restante: " + (proceso.MaxTime).ToString();
                     TbTimeTrans.Text = "Tiempo transcurrido: " + Timer.ToString();
                     ActualProcess = proceso;
                     Task.Delay(500).Wait();
@@ -270,10 +271,11 @@ namespace LotesWPF
                         _TablaBCP = null;
                         Tabla = false;
                     }
-                }
-                if (!proceso.IsFinish && !Bloqueado)
-                {
-                    _RoundRobin.Enqueue(proceso);
+                    if (!proceso.IsFinish && !Bloqueado && Timer == Quantum
+                        && (!_RoundRobin.Contains(proceso) && !_Bloqueados.Contains(proceso)))
+                    {
+                        _RoundRobin.Enqueue(proceso);
+                    }
                 }
                 Refresh();
                 //Si se detecta el error mandamos de resultado un error ademas de sacar los tiempos
