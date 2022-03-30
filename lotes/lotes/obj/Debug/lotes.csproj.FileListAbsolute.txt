@@ -1,0 +1,36 @@
+C:\Users\ACER\Desktop\CUCEI 7\Sistemas operativos\Programas\ArchivoPorLotes\lotes\lotes\bin\Debug\lotes.exe.config
+C:\Users\ACER\Desktop\CUCEI 7\Sistemas operativos\Programas\ArchivoPorLotes\lotes\lotes\bin\Debug\lotes.exe
+C:\Users\ACER\Desktop\CUCEI 7\Sistemas operativos\Programas\ArchivoPorLotes\lotes\lotes\bin\Debug\lotes.pdb
+C:\Users\ACER\Desktop\CUCEI 7\Sistemas operativos\Programas\ArchivoPorLotes\lotes\lotes\obj\Debug\lotes.csproj.AssemblyReference.cache
+C:\Users\ACER\Desktop\CUCEI 7\Sistemas operativos\Programas\ArchivoPorLotes\lotes\lotes\obj\Debug\lotes.csproj.SuggestedBindingRedirects.cache
+C:\Users\ACER\Desktop\CUCEI 7\Sistemas operativos\Programas\ArchivoPorLotes\lotes\lotes\obj\Debug\lotes.Form1.resources
+C:\Users\ACER\Desktop\CUCEI 7\Sistemas operativos\Programas\ArchivoPorLotes\lotes\lotes\obj\Debug\lotes.Properties.Resources.resources
+C:\Users\ACER\Desktop\CUCEI 7\Sistemas operativos\Programas\ArchivoPorLotes\lotes\lotes\obj\Debug\lotes.csproj.GenerateResource.cache
+C:\Users\ACER\Desktop\CUCEI 7\Sistemas operativos\Programas\ArchivoPorLotes\lotes\lotes\obj\Debug\lotes.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Desktop\CUCEI 7\Sistemas operativos\Programas\ArchivoPorLotes\lotes\lotes\obj\Debug\lotes.exe
+C:\Users\ACER\Desktop\CUCEI 7\Sistemas operativos\Programas\ArchivoPorLotes\lotes\lotes\obj\Debug\lotes.pdb
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\lotes\lotes\bin\Debug\lotes.exe.config
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\lotes\lotes\bin\Debug\lotes.exe
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\lotes\lotes\bin\Debug\lotes.pdb
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\lotes\lotes\obj\Debug\lotes.csproj.AssemblyReference.cache
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\lotes\lotes\obj\Debug\lotes.csproj.SuggestedBindingRedirects.cache
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\lotes\lotes\obj\Debug\lotes.Form1.resources
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\lotes\lotes\obj\Debug\lotes.Properties.Resources.resources
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\lotes\lotes\obj\Debug\lotes.csproj.GenerateResource.cache
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\lotes\lotes\obj\Debug\lotes.csproj.CoreCompileInputs.cache
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\lotes\lotes\obj\Debug\lotes.exe
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\lotes\lotes\obj\Debug\lotes.pdb
+C:\Users\ACER\Desktop\CUCEI 7\Sistemas operativos\Programas\lotes\lotes\bin\Debug\lotes.exe.config
+C:\Users\ACER\Desktop\CUCEI 7\Sistemas operativos\Programas\lotes\lotes\bin\Debug\lotes.exe
+C:\Users\ACER\Desktop\CUCEI 7\Sistemas operativos\Programas\lotes\lotes\bin\Debug\lotes.pdb
+C:\Users\ACER\Desktop\CUCEI 7\Sistemas operativos\Programas\lotes\lotes\obj\Debug\lotes.csproj.AssemblyReference.cache
+C:\Users\ACER\Desktop\CUCEI 7\Sistemas operativos\Programas\lotes\lotes\obj\Debug\lotes.csproj.SuggestedBindingRedirects.cache
+C:\Users\ACER\Desktop\CUCEI 7\Sistemas operativos\Programas\lotes\lotes\obj\Debug\lotes.Form1.resources
+C:\Users\ACER\Desktop\CUCEI 7\Sistemas operativos\Programas\lotes\lotes\obj\Debug\lotes.Properties.Resources.resources
+C:\Users\ACER\Desktop\CUCEI 7\Sistemas operativos\Programas\lotes\lotes\obj\Debug\lotes.csproj.GenerateResource.cache
+C:\Users\ACER\Desktop\CUCEI 7\Sistemas operativos\Programas\lotes\lotes\obj\Debug\lotes.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Desktop\CUCEI 7\Sistemas operativos\Programas\lotes\lotes\obj\Debug\lotes.exe
+C:\Users\ACER\Desktop\CUCEI 7\Sistemas operativos\Programas\lotes\lotes\obj\Debug\lotes.pdb
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\lotes\lotes\bin\Debug\WindowsInput.dll
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\lotes\lotes\bin\Debug\WindowsInput.xml
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\lotes\lotes\obj\Debug\lotes.csproj.CopyComplete

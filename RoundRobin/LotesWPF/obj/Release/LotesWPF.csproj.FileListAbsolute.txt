@@ -1,0 +1,15 @@
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\LotesWPF\LotesWPF\bin\Release\LotesWPF.exe.config
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\LotesWPF\LotesWPF\bin\Release\LotesWPF.exe
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\LotesWPF\LotesWPF\bin\Release\LotesWPF.pdb
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\LotesWPF\LotesWPF\obj\Release\LotesWPF.csproj.SuggestedBindingRedirects.cache
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\LotesWPF\LotesWPF\obj\Release\MainWindow.g.cs
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\LotesWPF\LotesWPF\obj\Release\App.g.cs
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\LotesWPF\LotesWPF\obj\Release\LotesWPF_MarkupCompile.cache
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\LotesWPF\LotesWPF\obj\Release\LotesWPF_MarkupCompile.lref
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\LotesWPF\LotesWPF\obj\Release\MainWindow.baml
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\LotesWPF\LotesWPF\obj\Release\LotesWPF.g.resources
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\LotesWPF\LotesWPF\obj\Release\LotesWPF.Properties.Resources.resources
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\LotesWPF\LotesWPF\obj\Release\LotesWPF.csproj.GenerateResource.cache
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\LotesWPF\LotesWPF\obj\Release\LotesWPF.csproj.CoreCompileInputs.cache
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\LotesWPF\LotesWPF\obj\Release\LotesWPF.exe
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\LotesWPF\LotesWPF\obj\Release\LotesWPF.pdb
