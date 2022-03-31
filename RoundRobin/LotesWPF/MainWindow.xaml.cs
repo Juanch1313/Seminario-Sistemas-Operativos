@@ -190,7 +190,7 @@ namespace LotesWPF
                 TbTime.Text = "Tiempo maximo: " + proceso.MaxTime.ToString();
                 EnEjecucion = true;
                 //Comenzamos la ejecucion del proceso
-                for (int Timer = 0; Timer < Quantum; Timer++)
+                for (int Timer = 0; Timer <= Quantum - 1; Timer++)
                 {
                     proceso.TransTime++;
                     proceso.MaxTime--;
@@ -271,7 +271,7 @@ namespace LotesWPF
                         _TablaBCP = null;
                         Tabla = false;
                     }
-                    if (!proceso.IsFinish && !Bloqueado && Timer == Quantum
+                    if (!proceso.IsFinish && !Bloqueado && Timer == Quantum - 1
                         && (!_RoundRobin.Contains(proceso) && !_Bloqueados.Contains(proceso)))
                     {
                         _RoundRobin.Enqueue(proceso);
