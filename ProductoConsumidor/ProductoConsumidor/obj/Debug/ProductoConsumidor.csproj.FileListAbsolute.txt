@@ -1,0 +1,16 @@
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\ProductoConsumidor\ProductoConsumidor\bin\Debug\ProductoConsumidor.exe.config
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\ProductoConsumidor\ProductoConsumidor\bin\Debug\ProductoConsumidor.exe
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\ProductoConsumidor\ProductoConsumidor\bin\Debug\ProductoConsumidor.pdb
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\ProductoConsumidor\ProductoConsumidor\obj\Debug\ProductoConsumidor.csproj.AssemblyReference.cache
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\ProductoConsumidor\ProductoConsumidor\obj\Debug\ProductoConsumidor.csproj.SuggestedBindingRedirects.cache
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\ProductoConsumidor\ProductoConsumidor\obj\Debug\MainWindow.g.cs
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\ProductoConsumidor\ProductoConsumidor\obj\Debug\App.g.cs
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\ProductoConsumidor\ProductoConsumidor\obj\Debug\ProductoConsumidor_MarkupCompile.cache
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\ProductoConsumidor\ProductoConsumidor\obj\Debug\ProductoConsumidor_MarkupCompile.lref
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\ProductoConsumidor\ProductoConsumidor\obj\Debug\MainWindow.baml
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\ProductoConsumidor\ProductoConsumidor\obj\Debug\ProductoConsumidor.g.resources
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\ProductoConsumidor\ProductoConsumidor\obj\Debug\ProductoConsumidor.Properties.Resources.resources
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\ProductoConsumidor\ProductoConsumidor\obj\Debug\ProductoConsumidor.csproj.GenerateResource.cache
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\ProductoConsumidor\ProductoConsumidor\obj\Debug\ProductoConsumidor.csproj.CoreCompileInputs.cache
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\ProductoConsumidor\ProductoConsumidor\obj\Debug\ProductoConsumidor.exe
+D:\Universidad\Semestre 7\Seminario de solucion de problemas de sistemas operativos\Programas\ProductoConsumidor\ProductoConsumidor\obj\Debug\ProductoConsumidor.pdb

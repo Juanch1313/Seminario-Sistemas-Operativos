@@ -1,0 +1,123 @@
+﻿<Window x:Class="ProductoConsumidor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProductoConsumidor"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Title="MainWindow" Height="720" Width="1080"
+        Icon="/Imagenes/logo.ico"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF13704D" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Productor  Consumidor"
+               Foreground="White"
+               FontSize="60" FontWeight="Bold"
+               HorizontalAlignment="Center"
+               Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+        <Button x:Name="BtnIniciar" Grid.Column="0" Grid.Row="1"
+                Grid.ColumnSpan="2" Width="200" Height="100"
+                Content="Iniciar"
+                Foreground="white" FontSize="40"
+                Background="#4D0032"
+                Cursor="Hand"
+                Click="BtnIniciar_Click"/>
+
+        <Image x:Name="Productor" Grid.Row="1"
+               Width="200" Source="/Imagenes/productor.png"/>
+
+        <Image x:Name="Consumidor" Grid.Row="1" Grid.Column="2"
+               Width="200" Source="/Imagenes/consumidor.png"/>
+
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="2" Grid.ColumnSpan="2"
+                    Height="200" HorizontalAlignment="Center"
+                    VerticalAlignment="Top">
+            <Image x:Name="D1" Width="80"
+                   Source="/Imagenes/Dorito.png"
+                   Margin="20,0,0,0"/>
+            <Image x:Name="D2" Width="80"
+                   Source="/Imagenes/Dorito.png"
+                   Margin="20,0,0,0"/>
+            <Image x:Name="D3" Width="80"
+                   Source="/Imagenes/Dorito.png"
+                   Margin="20,0,0,0"/>
+            <Image x:Name="D4" Width="80"
+                   Source="/Imagenes/Dorito.png"
+                   Margin="20,0,0,0"/>
+            <Image x:Name="D5" Width="80"
+                   Source="/Imagenes/Dorito.png"
+                   Margin="20,0,0,0"/>
+            <Image x:Name="D6" Width="80"
+                   Source="/Imagenes/Dorito.png"
+                   Margin="20,0,0,0"/>
+            <Image x:Name="D7" Width="80"
+                   Source="/Imagenes/Dorito.png"
+                   Margin="20,0,0,0"/>
+            <Image x:Name="D8" Width="80"
+                   Source="/Imagenes/Dorito.png"
+                   Margin="20,0,0,0"/>
+            <Image x:Name="D9" Width="80"
+                   Source="/Imagenes/Dorito.png"
+                   Margin="20,0,0,0"/>
+            <Image x:Name="D10" Width="80"
+                   Source="/Imagenes/Dorito.png"
+                   Margin="20,0,0,0"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="2" Grid.ColumnSpan="2"
+                    Height="200" HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom">
+            <Image x:Name="D11" Width="80"
+                   Source="/Imagenes/Dorito.png"
+                   Margin="20,0,0,0"/>
+            <Image x:Name="D12" Width="80"
+                   Source="/Imagenes/Dorito.png"
+                   Margin="20,0,0,0"/>
+            <Image x:Name="D13" Width="80"
+                   Source="/Imagenes/Dorito.png"
+                   Margin="20,0,0,0"/>
+            <Image x:Name="D14" Width="80"
+                   Source="/Imagenes/Dorito.png"
+                   Margin="20,0,0,0"/>
+            <Image x:Name="D15" Width="80"
+                   Source="/Imagenes/Dorito.png"
+                   Margin="20,0,0,0"/>
+            <Image x:Name="D16" Width="80"
+                   Source="/Imagenes/Dorito.png"
+                   Margin="20,0,0,0"/>
+            <Image x:Name="D17" Width="80"
+                   Source="/Imagenes/Dorito.png"
+                   Margin="20,0,0,0"/>
+            <Image x:Name="D18" Width="80"
+                   Source="/Imagenes/Dorito.png"
+                   Margin="20,0,0,0"/>
+            <Image x:Name="D19" Width="80"
+                   Source="/Imagenes/Dorito.png"
+                   Margin="20,0,0,0"/>
+            <Image x:Name="D20" Width="80"
+                   Source="/Imagenes/Dorito.png"
+                   Margin="20,0,0,0"/>
+        </StackPanel>
+    </Grid>
+</Window>

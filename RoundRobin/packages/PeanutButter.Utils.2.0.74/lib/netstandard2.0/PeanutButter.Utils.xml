@@ -1249,88 +1249,6 @@
             Returns a collection of all known values
             </summary>
         </member>
-        <member name="T:PeanutButter.Utils.Dictionaries.DictionaryWrappingConnectionStringSettingCollection`1">
-            <summary>
-            Provides a mechanism for wrapping read-write access to a ConnectionStringSettingsCollection
-            in the IDictionary&lt;string, string&gt; interface to simplify shimming other types
-            </summary>
-        </member>
-        <member name="M:PeanutButter.Utils.Dictionaries.DictionaryWrappingConnectionStringSettingCollection`1.#ctor(System.Configuration.ConnectionStringSettingsCollection,System.Boolean)">
-            <summary>
-            Wrap the provided settings collection with or without case sensitivity
-            </summary>
-            <param name="connectionStringSettings"></param>
-            <param name="isCaseInsensitive"></param>
-        </member>
-        <member name="M:PeanutButter.Utils.Dictionaries.DictionaryWrappingConnectionStringSettingCollection`1.#ctor(System.Configuration.ConnectionStringSettingsCollection)">
-            <summary>
-            Wrap the provided connection string settings with case-sensitive,
-            ordinal comparison for keys
-            </summary>
-            <param name="connectionStringSettings"></param>
-        </member>
-        <member name="M:PeanutButter.Utils.Dictionaries.DictionaryWrappingConnectionStringSettingCollection`1.#ctor(System.Configuration.ConnectionStringSettingsCollection,System.StringComparer)">
-            <summary>
-            Wrap the provided connection string settings with the provided
-            keyComparer for set / retrieval
-            </summary>
-            <param name="connectionStrings"></param>
-            <param name="keyComparer"></param>
-        </member>
-        <member name="M:PeanutButter.Utils.Dictionaries.DictionaryWrappingConnectionStringSettingCollection`1.GetEnumerator">
-            <inheritdoc />
-        </member>
-        <member name="M:PeanutButter.Utils.Dictionaries.DictionaryWrappingConnectionStringSettingCollection`1.System#Collections#IEnumerable#GetEnumerator">
-            <inheritdoc />
-        </member>
-        <member name="M:PeanutButter.Utils.Dictionaries.DictionaryWrappingConnectionStringSettingCollection`1.Clear">
-            <inheritdoc />
-        </member>
-        <member name="M:PeanutButter.Utils.Dictionaries.DictionaryWrappingConnectionStringSettingCollection`1.CopyTo(System.Collections.Generic.KeyValuePair{System.String,`0}[],System.Int32)">
-            <inheritdoc />
-        </member>
-        <member name="M:PeanutButter.Utils.Dictionaries.DictionaryWrappingConnectionStringSettingCollection`1.Remove(System.Collections.Generic.KeyValuePair{System.String,`0})">
-            <inheritdoc />
-        </member>
-        <member name="M:PeanutButter.Utils.Dictionaries.DictionaryWrappingConnectionStringSettingCollection`1.Contains(System.Collections.Generic.KeyValuePair{System.String,`0})">
-            <inheritdoc />
-        </member>
-        <member name="M:PeanutButter.Utils.Dictionaries.DictionaryWrappingConnectionStringSettingCollection`1.ContainsKey(System.String)">
-            <inheritdoc />
-        </member>
-        <member name="M:PeanutButter.Utils.Dictionaries.DictionaryWrappingConnectionStringSettingCollection`1.Add(System.Collections.Generic.KeyValuePair{System.String,`0})">
-            <inheritdoc />
-        </member>
-        <member name="M:PeanutButter.Utils.Dictionaries.DictionaryWrappingConnectionStringSettingCollection`1.Add(System.String,`0)">
-            <inheritdoc />
-        </member>
-        <member name="M:PeanutButter.Utils.Dictionaries.DictionaryWrappingConnectionStringSettingCollection`1.Remove(System.String)">
-            <inheritdoc />
-        </member>
-        <member name="M:PeanutButter.Utils.Dictionaries.DictionaryWrappingConnectionStringSettingCollection`1.TryGetValue(System.String,`0@)">
-            <inheritdoc />
-        </member>
-        <member name="P:PeanutButter.Utils.Dictionaries.DictionaryWrappingConnectionStringSettingCollection`1.Item(System.String)">
-            <inheritdoc />
-        </member>
-        <member name="P:PeanutButter.Utils.Dictionaries.DictionaryWrappingConnectionStringSettingCollection`1.Keys">
-            <inheritdoc />
-        </member>
-        <member name="P:PeanutButter.Utils.Dictionaries.DictionaryWrappingConnectionStringSettingCollection`1.Count">
-            <inheritdoc />
-        </member>
-        <member name="P:PeanutButter.Utils.Dictionaries.DictionaryWrappingConnectionStringSettingCollection`1.Values">
-            <inheritdoc />
-        </member>
-        <member name="P:PeanutButter.Utils.Dictionaries.DictionaryWrappingConnectionStringSettingCollection`1.IsReadOnly">
-            <inheritdoc />
-        </member>
-        <member name="P:PeanutButter.Utils.Dictionaries.DictionaryWrappingConnectionStringSettingCollection`1.Comparer">
-            <summary>
-            Provides read-only access to the string comparer being used for key
-            comparison
-            </summary>
-        </member>
         <member name="T:PeanutButter.Utils.Dictionaries.DictionaryWrappingNameValueCollection`1">
             <summary>
             Wraps a NameValueCollection in an IDictionary interface
@@ -4330,6 +4248,14 @@
             <param name="input">string to operate on</param>
             <returns>string with upper-cased first letter or null if input was null</returns>
         </member>
+        <member name="M:PeanutButter.Utils.StringExtensions.ToLower(System.String,System.Globalization.CultureInfo)">
+            <summary>
+            Provides an in-place shum for the ToLower method
+            which is used from .net framework; the latter
+            can accept a CultureInfo parameter, where .net standard
+            cannot, so the parameter is just dropped
+            </summary>
+        </member>
         <member name="M:PeanutButter.Utils.StringExtensions.IsNumeric(System.String)">
             <summary>
             Returns whether or not a string is an integer value
@@ -4714,6 +4640,60 @@
             </summary>
             <param name="t"></param>
             <returns></returns>
+        </member>
+        <member name="M:PeanutButter.Utils.TypeExtensions.GetMethod(System.Type,System.String,System.Reflection.BindingFlags)">
+            <summary>
+            provides the method normally found on a .net framework
+            Type object, but reachabole on .net standard only via GetTypeInfo();
+            </summary>
+        </member>
+        <member name="M:PeanutButter.Utils.TypeExtensions.GetProperties(System.Type)">
+            <summary>
+            provides the method normally found on a .net framework
+            Type object, but reachabole on .net standard only via GetTypeInfo();
+            </summary>
+        </member>
+        <member name="M:PeanutButter.Utils.TypeExtensions.GetProperty(System.Type,System.String)">
+            <summary>
+            provides the method normally found on a .net framework
+            Type object, but reachabole on .net standard only via GetTypeInfo();
+            </summary>
+        </member>
+        <member name="M:PeanutButter.Utils.TypeExtensions.GetProperty(System.Type,System.String,System.Reflection.BindingFlags)">
+            <summary>
+            provides the method normally found on a .net framework
+            Type object, but reachabole on .net standard only via GetTypeInfo();
+            </summary>
+        </member>
+        <member name="M:PeanutButter.Utils.TypeExtensions.GetProperties(System.Type,System.Reflection.BindingFlags)">
+            <summary>
+            provides the method normally found on a .net framework
+            Type object, but reachabole on .net standard only via GetTypeInfo();
+            </summary>
+        </member>
+        <member name="M:PeanutButter.Utils.TypeExtensions.GetFields(System.Type,System.Reflection.BindingFlags)">
+            <summary>
+            provides the method normally found on a .net framework
+            Type object, but reachabole on .net standard only via GetTypeInfo();
+            </summary>
+        </member>
+        <member name="M:PeanutButter.Utils.TypeExtensions.IsAssignableFrom(System.Type,System.Type)">
+            <summary>
+            provides the method normally found on a .net framework
+            Type object, but reachabole on .net standard only via GetTypeInfo();
+            </summary>
+        </member>
+        <member name="M:PeanutButter.Utils.TypeExtensions.GetInterfaces(System.Type)">
+            <summary>
+            provides the method normally found on a .net framework
+            Type object, but reachabole on .net standard only via GetTypeInfo();
+            </summary>
+        </member>
+        <member name="M:PeanutButter.Utils.TypeExtensions.GetGenericArguments(System.Type)">
+            <summary>
+            provides the method normally found on a .net framework
+            Type object, but reachabole on .net standard only via GetTypeInfo();
+            </summary>
         </member>
         <member name="M:PeanutButter.Utils.TypeExtensions.GetAssembly(System.Type)">
             <summary>
