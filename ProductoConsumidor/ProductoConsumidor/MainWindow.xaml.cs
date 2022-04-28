@@ -23,8 +23,12 @@ namespace ProductoConsumidor
     public partial class MainWindow : Window
     {
         private List<Image> _Images;
+        //Variable diseñara para saber en que punto de inserccion de producto nos quedamos
         private int Ultimo = 0;
+
+        //Variable diseñara para saber en que punto de consumo de producto nos quedamos
         private int ConsumidorUltimo = 0;
+
         private bool Inicio = false;
         private readonly Random random = new Random();
         public MainWindow()
@@ -34,6 +38,7 @@ namespace ProductoConsumidor
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            //Creamos una lista la cual controlara la modificacion del producto
             _Images = new List<Image>
             {
                 D1, D2 , D3, D4, D5, D6, D7, D8, D9, D10,
@@ -43,7 +48,12 @@ namespace ProductoConsumidor
 
         private async void BtnIniciar_Click(object sender, RoutedEventArgs e)
         {
+            //Desactivamos el boton para evitar errores
+            BtnIniciar.IsEnabled = false;
+            //Se llama la funcion para detectar la tecla ESC
             Teclaso();
+
+            //Inicializamos las imagenes en estado oculto
             foreach (var imagen in _Images)
             {
                 Dispatcher.Invoke(new Action(async () =>
@@ -64,15 +74,20 @@ namespace ProductoConsumidor
             }
         }
 
+        /// <summary>
+        /// Encargada de hacer la animacion de agregar productos
+        /// </summary>
+        /// <returns>Nada</returns>
         private async Task IngresarProducto()
         {
+            //Se crea la animacion para el productor
             var Animation = new DoubleAnimation();
             Animation.From = 1;
             Animation.To = 0;
             Animation.AutoReverse = true;
-
             Productor.BeginAnimation(Image.OpacityProperty, Animation);
 
+            //Se genera un numero random el cual es el numero de productos que se agregaran
             var pos = random.Next(5, 20);
             await Task.Delay(100);
             for (int i = 0; i < pos; i++)
@@ -95,10 +110,15 @@ namespace ProductoConsumidor
                     _Images[Ultimo].Visibility = Visibility.Visible;
                     await Task.Delay(600);
                 }
+                //Se incrementa el contador el cual registrara en que registro se quedo el ultimo
+                //producto insertado
                 Ultimo++;
             }
         }
 
+        /// <summary>
+        /// Encargada de detectar la presion de la tecla ESC y cerrar el programa
+        /// </summary>
         private void Teclaso()
         {
             Dispatcher.Invoke(new Action(async () =>
@@ -115,20 +135,29 @@ namespace ProductoConsumidor
 
         }
 
+        /// <summary>
+        /// Encargada de consumir los productos y despertar el consumidor
+        /// </summary>
+        /// <returns>Nada</returns>
         private async Task LlamarConsumidor()
         {
+            //Se actualiza estado del consumidor
             ConsumidorEstado.Content = "Activo";
             await Task.Delay(100);
+            //Se agrega una pequeña animacion a la imagen del consumidor
             var Animation = new DoubleAnimation();
             Animation.From = 1;
             Animation.To = 0;
             Animation.AutoReverse = true;
-
             Consumidor.BeginAnimation(Image.OpacityProperty, Animation);
 
+            //Se saca un numero random el cual sera el numero de elementos
+            //que se consumira
             var Consumo = random.Next(5, 20);
             for (int i = 0; i < Consumo; i++)
             {
+                //Se validan la diferentes posibilidades existentes para que sea un
+                //tipo de lista circular
                 if (ConsumidorUltimo == 20) { ConsumidorUltimo = 0; }
                 if (ConsumidorUltimo + 1 < 20)
                 {
@@ -149,6 +178,7 @@ namespace ProductoConsumidor
                 ConsumidorUltimo++;
                 await Task.Delay(500);
             }
+            //Actualizamos
             ConsumidorEstado.Content = "Dormido";
         }
     }
