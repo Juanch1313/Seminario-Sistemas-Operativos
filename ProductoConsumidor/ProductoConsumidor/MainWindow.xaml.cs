@@ -87,10 +87,15 @@ namespace ProductoConsumidor
                     else
                     {
                         _Images[Ultimo].Visibility = Visibility.Visible;
-                        Ultimo++;
                         await Task.Delay(600);
                     }
                 }
+                else
+                {
+                    _Images[Ultimo].Visibility = Visibility.Visible;
+                    await Task.Delay(600);
+                }
+                Ultimo++;
             }
         }
 
@@ -112,6 +117,7 @@ namespace ProductoConsumidor
 
         private async Task LlamarConsumidor()
         {
+            ConsumidorEstado.Content = "Activo";
             await Task.Delay(100);
             var Animation = new DoubleAnimation();
             Animation.From = 1;
@@ -136,9 +142,14 @@ namespace ProductoConsumidor
                     }
                     await Task.Delay(100);
                 }
+                else
+                {
+                    _Images[ConsumidorUltimo].Visibility = Visibility.Hidden;
+                }
                 ConsumidorUltimo++;
                 await Task.Delay(500);
             }
+            ConsumidorEstado.Content = "Dormido";
         }
     }
 }

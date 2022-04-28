@@ -47,6 +47,12 @@
 
         <Image x:Name="Consumidor" Grid.Row="1" Grid.Column="2"
                Width="200" Source="/Imagenes/consumidor.png"/>
+        <Label x:Name="ConsumidorEstado" Grid.Row="1" Grid.Column="2"
+               Content="Dormido"
+               Foreground="White" FontSize="30"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Center"
+               Margin="0,0,80,0"/>
 
         <StackPanel Orientation="Horizontal"
                     Grid.Row="2" Grid.ColumnSpan="2"
