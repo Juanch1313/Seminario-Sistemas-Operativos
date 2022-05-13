@@ -109,25 +109,31 @@ namespace LotesWPF
                 {
                     Id = i,
                     ProcessID = -1,
-                    Data = "Libre"
+                    Status = "Libre"
                 });
             }
 
             _Marcos[49].ActualSize = 5;
-            _Marcos[49].Data = "SO";
+            _Marcos[49].Status = "SO";
+            _Marcos[49].Data = $"5/5";
+
             _Marcos[48].ActualSize = 5;
-            _Marcos[48].Data = "SO";
+            _Marcos[48].Status = "SO";
+            _Marcos[48].Data = $"5/5";
+
             _Marcos[47].ActualSize = 5;
-            _Marcos[47].Data = "SO";
+            _Marcos[47].Status = "SO";
+            _Marcos[47].Data = $"5/5";
+
             _Marcos[46].ActualSize = 5;
-            _Marcos[46].Data = "SO";
+            _Marcos[46].Status = "SO";
+            _Marcos[46].Data = $"5/5";
         }
 
         private void LlenarMarcos(Process process)
         {
             if (process.Size > Espacio) { _Paginacion.Enqueue(process); return; }
-            if (MarcoActual >= 46) { MarcoActual = 0; }
-            Espacio -= process.Size;
+            if (MarcoActual >= 45) { MarcoActual = 0; }
             _Marcos[MarcoActual].ProcessID = process.ProcessID;
             if (process.Size > _Marcos[MarcoActual].ActualSize)
             {
@@ -135,16 +141,29 @@ namespace LotesWPF
                 while (counter > 0)
                 {
                     _Marcos[MarcoActual].ProcessID = process.ProcessID;
-                    _Marcos[MarcoActual].ActualSize = 5;
                     _Marcos[MarcoActual].RemainSize = 5;
+                    if(counter > 5)
+                    {
+                        _Marcos[MarcoActual].ActualSize = 5;
+                        counter -= 5;
+                        Espacio -= 5;
+                    }
+                    else
+                    {
+                        _Marcos[MarcoActual].ActualSize = counter;
+                        counter = 0;
+                        Espacio -= counter;
+                    }
                     _Marcos[MarcoActual].Data = $"{_Marcos[MarcoActual].ActualSize} / {_Marcos[MarcoActual].RemainSize}";
-                    counter -= _Marcos[MarcoActual].ActualSize;
+                    _Marcos[MarcoActual].Status = "Ocupado";
                     MarcoActual++;
                     UltimoID = process.ProcessID;
                 }
             }
             else
             {
+                _Marcos[MarcoActual].ActualSize = 0;
+                _Marcos[MarcoActual].RemainSize = 5;
                 _Marcos[MarcoActual].ActualSize += process.Size;
                 _Marcos[MarcoActual].RemainSize -= process.Size;
                 _Marcos[MarcoActual].Data = $"{_Marcos[MarcoActual].ActualSize} / {_Marcos[MarcoActual].RemainSize}";
@@ -200,7 +219,9 @@ namespace LotesWPF
                             process.ComingTime = Time;
 
                             LlenarMarcos(process);
-                            Dispatcher.Invoke(new Action(() => { LbPendientes.Text = $"Procesos nuevos: {_Paginacion.Count - UltimoID}"; }));
+                            Dispatcher.Invoke(new Action(() => { LbPendientes.Text = $"Procesos nuevos: {ObtenerNuevos()}"; }));
+                            DgvListos.ItemsSource = null;
+                            DgvListos.ItemsSource = _Marcos;
                         }
                         Refresh();
                     }
@@ -218,11 +239,11 @@ namespace LotesWPF
                 {
                     if (marco.ProcessID == proceso.ProcessID)
                     {
-                        marco.Data = "Ejecutando";
+                        marco.Status = "Ejecutando";
                     }
                 }
                 //Se actualizan los procesos pendientes cuyos estan fuera de memoria
-                LbPendientes.Text = $"Procesos nuevos: {_Paginacion.Count - UltimoID}";
+                LbPendientes.Text = $"Procesos nuevos: {ObtenerNuevos()}";
 
                 //Desencolamos el primer proceso para trabajarlo y actualizamos la tabla para que muestre los datos
 
@@ -323,7 +344,7 @@ namespace LotesWPF
                         {
                             if (marco.ProcessID == proceso.ProcessID)
                             {
-                                marco.Data = "Bloqueado";
+                                marco.Status = "Bloqueado";
                             }
                         }
                         _Bloqueados.Enqueue(proceso);
@@ -500,6 +521,22 @@ namespace LotesWPF
             TbQuantum.IsEnabled = true;
             TbNumProcesos.IsEnabled = true;
             Refresh();
+        }
+
+        private int ObtenerNuevos()
+        {
+            int counter = 0;
+            try
+            {
+                foreach (var procesos in ProcesosRegistrados)
+                {
+                    if (_Marcos.Find(p => p.ProcessID == procesos.ProcessID)?.ProcessID != 0)
+                    {
+                        counter++;
+                    }
+                }
+            } catch { return 0; }
+            return ProcesosRegistrados.Count - counter;
         }
 
         #endregion

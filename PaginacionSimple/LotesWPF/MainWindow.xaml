@@ -92,7 +92,36 @@
                 <DataGridTextColumn Header="Marco" Binding= "{Binding Id}" Width="*"></DataGridTextColumn>
                 <DataGridTextColumn Header="Proceso" Binding= "{Binding ProcessID}" Width="*"></DataGridTextColumn>
                 <DataGridTextColumn Header="Tamano" Binding= "{Binding Data}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Estado" Binding= "{Binding Status}" Width="*"></DataGridTextColumn>
             </DataGrid.Columns>
+
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Status}" Value="Libre">
+                            <Setter Property="Background" Value="Green"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Status}" Value="Ejecutando">
+                            <Setter Property="Background" Value="IndianRed"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Status}" Value="Ocupado">
+                            <Setter Property="Background" Value="Violet"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Status}" Value="Bloqueado">
+                            <Setter Property="Background" Value="BlueViolet"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Status}" Value="SO">
+                            <Setter Property="Background" Value="Gray"/>
+                            <Setter Property="Foreground" Value="Blue"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+
 
         </DataGrid>
 

@@ -18,6 +18,7 @@ namespace LotesWPF.Clases
         public int RemainSize { get; set; }
 
         public string Data { get; set; }
+        public string Status { get; set; }
         public Marco()
         {
             ActualSize = 0;
