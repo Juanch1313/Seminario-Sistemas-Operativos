@@ -1,0 +1,38 @@
+﻿<Window x:Class="LotesWPF.TablaDePaginas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LotesWPF"
+        mc:Ignorable="d"
+        Title="TablaDePaginas" Height="720" Width="1280"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized">
+    <Grid Background="#0B735E">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Border BorderBrush="White" BorderThickness="5"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top"
+                   Margin="0,10,0,0" Foreground="White"
+                   FontSize="30">
+            Tabla de paginas
+        </TextBlock>
+
+        <DataGrid x:Name="DgvPaginas" AutoGenerateColumns="false"
+                  VerticalAlignment="Top" IsReadOnly="true"
+                  Margin="30,60,30,30" Height="600"
+                  FontSize="18" HorizontalAlignment="Center" BorderBrush="Black"
+                  BorderThickness="5">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Proceso" Binding="{Binding ProcessID}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Tamaño" Binding="{Binding Size}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Marcos" Binding="{Binding Marcos}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Frames" Binding="{Binding Frames}" Width="*"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

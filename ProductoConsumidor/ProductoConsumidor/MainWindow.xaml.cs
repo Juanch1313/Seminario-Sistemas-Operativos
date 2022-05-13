@@ -30,6 +30,7 @@ namespace ProductoConsumidor
         private int ConsumidorUltimo = 0;
 
         private bool Inicio = false;
+        private bool Final = true;
         private readonly Random random = new Random();
         public MainWindow()
         {
@@ -49,7 +50,7 @@ namespace ProductoConsumidor
         private async void BtnIniciar_Click(object sender, RoutedEventArgs e)
         {
             //Desactivamos el boton para evitar errores
-            BtnIniciar.IsEnabled = false;
+            BtnIniciar.Visibility = Visibility.Hidden;
             //Se llama la funcion para detectar la tecla ESC
             Teclaso();
 
@@ -66,7 +67,7 @@ namespace ProductoConsumidor
                }));
             }
             Inicio = true;
-            while (true)
+            while (Final)
             {
                 await IngresarProducto();
 
@@ -128,7 +129,7 @@ namespace ProductoConsumidor
                    await Task.Delay(10);
                    if (Keyboard.GetKeyStates(Key.Escape) == KeyStates.Down)
                    {
-                       Application.Current.Shutdown();
+                       Final = false;
                    }
                }
            }));

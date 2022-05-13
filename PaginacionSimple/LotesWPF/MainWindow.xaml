@@ -1,0 +1,209 @@
+﻿<Window x:Class="LotesWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LotesWPF"
+        mc:Ignorable="d"
+        Title="Paginación Simple" Height="720" Width="1280" Icon="/logo.ico" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid Background="#0B735E">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width ="3*"/>
+            <ColumnDefinition Width ="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Grid.Column="0"
+                BorderThickness="2" BorderBrush="White"/>
+        <Border Grid.Row="2" Grid.ColumnSpan="2" 
+                BorderThickness="2" BorderBrush="White"/>
+        <Border Grid.Row="0" Grid.Column="2"  Grid.RowSpan="2"
+                Grid.ColumnSpan="2"
+                BorderThickness="2" BorderBrush="White"/>
+        <Border Grid.Row="1" Grid.Column="0"
+                BorderThickness="2" BorderBrush="White"/>
+
+        <!--Primera fila - Primera columna-->
+        <TextBlock Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center"
+                   Margin="45,5,190,71" Foreground="White" FontSize="20" Width="200">
+            Numero de procesos
+        </TextBlock>
+        <TextBox x:Name="TbNumProcesos" Grid.Column="0"
+                 Width="200" Margin="40,35,190,36"
+                 HorizontalAlignment="Left"
+                 FontSize="20" Foreground="White"
+                 Background="#0A6654" BorderBrush="White"
+                 BorderThickness="2"/>
+
+        <TextBlock Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"
+                   Margin="260,5,190,71" Foreground="White" FontSize="20" Width="100">
+            Quantum
+        </TextBlock>
+        <TextBox x:Name="TbQuantum" Grid.Column="0"
+                 Width="200" Margin="250,35,190,36"
+                 HorizontalAlignment="Center"
+                 FontSize="20" Foreground="White"
+                 Background="#0A6654" BorderBrush="White"
+                 BorderThickness="2"/>
+        <!--Primera fila- Segunda columna-->
+        <TextBlock Grid.Column="1" VerticalAlignment="Bottom"
+                   HorizontalAlignment="Right"
+                   FontSize="18"
+                   Foreground="White"
+                   Margin="0,0,10,0" Height="50" Width="auto">
+            Carlos Alberto Ceja Zapata
+            <LineBreak/>
+            Juan Rodríguez Tabares
+        </TextBlock>
+
+        <Button x:Name="BtnInicio" Grid.Column="0"
+                Width="150" Height="40"
+                Background="#0A6654" TextBlock.Foreground="White"
+                TextBlock.FontSize="20" BorderThickness="2" BorderBrush="White" VerticalAlignment="Center"
+                HorizontalAlignment="Right" 
+                Margin="350,0,10,0" RenderTransformOrigin="166,0"
+                Cursor="Hand" Click="BtnInicio_Click">
+            Iniciar
+        </Button>
+
+        <!--Segunda fila primera columna-->
+        <TextBlock x:Name="LbPendientes" Grid.Row="1"
+                   Foreground="White"
+                   FontSize="20" HorizontalAlignment="Center"
+                   VerticalAlignment="Top">
+            Procesos Nuevos:
+        </TextBlock>
+        <TextBlock Grid.Row="1"
+                   Foreground="White"
+                   FontSize="20" HorizontalAlignment="Right"
+                   VerticalAlignment="Top" Margin="0,10,130,0">
+            Procesos listos
+        </TextBlock>
+        <DataGrid x:Name="DgvListos" Grid.Row ="1"
+                  AutoGenerateColumns="False" Width="400" Height="250"
+                  VerticalAlignment="Bottom" IsReadOnly="True"
+                  Margin="0,0,10,10"
+                  FontSize="16" Foreground="Black" IsEnabled="True" HorizontalAlignment="Right">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Marco" Binding= "{Binding Id}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Proceso" Binding= "{Binding ProcessID}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Tamano" Binding= "{Binding Data}" Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+        <TextBlock Grid.Row="1" Foreground="White" FontSize="20"
+                   HorizontalAlignment="Left" VerticalAlignment="Top"
+                   Margin="100,60,0,0">
+            Bloqueados
+        </TextBlock>
+        <DataGrid x:Name="DgvBloqueados" Grid.Row="1" AutoGenerateColumns="False"
+                  Width="250" Height="200" IsReadOnly="True"
+                  Margin="30,0,0,10"
+                  VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                  FontSize="15" Foreground="Black" IsEnabled="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ProcessID}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Tiempo" Binding="{Binding BloqTimer}" Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!--Segunda fila - Segunda columna-->
+        <TextBlock x:Name="TbTemporizador" 
+                   Grid.Row="0" Grid.Column="1"
+                   FontSize="20" Foreground="White"
+                   Margin="20,0,0,0" HorizontalAlignment="Left"
+                   VerticalAlignment="Top">
+            Temporiador Global: 0
+        </TextBlock>
+
+        <TextBlock x:Name="TbID" 
+                   Grid.Row="1" Grid.Column="1"
+                   FontSize="20" Foreground="White"
+                   Margin="10,10,0,0" HorizontalAlignment="Left"
+                   VerticalAlignment="Top" >
+            ID:
+        </TextBlock>
+
+        <TextBlock x:Name="TbValor1" 
+                   Grid.Row="1" Grid.Column="1"
+                   FontSize="20" Foreground="White"
+                   Margin="10,50,0,00" HorizontalAlignment="Left"
+                   VerticalAlignment="Top" >
+            Valor 1:
+        </TextBlock>
+
+        <TextBlock x:Name="TbOperator" 
+                   Grid.Row="1" Grid.Column="1"
+                   FontSize="20" Foreground="White"
+                   Margin="10,90,0,0" HorizontalAlignment="Left"
+                   VerticalAlignment="Top">
+            Operacion:
+        </TextBlock>
+
+        <TextBlock x:Name="TbValor2" 
+                   Grid.Row="1" Grid.Column="1"
+                   FontSize="20" Foreground="White"
+                   Margin="10,60,0,80" HorizontalAlignment="Left"
+                   VerticalAlignment="Center" >
+            Valor 2:
+        </TextBlock>
+
+        <TextBlock x:Name="TbTime" 
+                   Grid.Row="1" Grid.Column="1"
+                   FontSize="20" Foreground="White"
+                   Margin="10,90,0,20" HorizontalAlignment="Left"
+                   VerticalAlignment="Center" >
+            Tiempo Maximo:
+        </TextBlock>
+
+        <TextBlock x:Name="TbTimeRes" 
+                   Grid.Row="1" Grid.Column="1"
+                   FontSize="20" Foreground="White"
+                   Margin="10,0,0,60" HorizontalAlignment="Left"
+                   VerticalAlignment="Bottom" >
+            Tiempo Restante:
+        </TextBlock>
+
+        <TextBlock x:Name="TbTimeTrans" 
+                   Grid.Row="1" Grid.Column="1"
+                   FontSize="20" Foreground="White"
+                   Margin="10,0,0,20" HorizontalAlignment="Left"
+                   VerticalAlignment="Bottom" >
+            Tiempo Transcurrido:
+        </TextBlock>
+
+
+        <!--Tercera fila-->
+        <TextBlock Grid.Row="2" Grid.ColumnSpan="2"
+                   FontSize="20" Foreground="White"
+                   Margin="10,10,0,0" HorizontalAlignment="Center"
+                   VerticalAlignment="Top">
+            Procesos finalizados
+        </TextBlock>
+
+        <DataGrid x:Name="DgvFinalizados" Grid.Row ="2" Grid.ColumnSpan="2"
+                  AutoGenerateColumns="false" Width="auto" Height="250"
+                  Margin="10,0,10,10" VerticalAlignment="Bottom" IsReadOnly="true"
+                  FontSize="18" IsEnabled ="True"
+                  CanUserResizeRows="False"
+                  CanUserResizeColumns="False"
+                  CanUserReorderColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ProcessID}" Width="50"></DataGridTextColumn>
+                <DataGridTextColumn Header="Operación" Binding="{Binding Operator}" Width="100"></DataGridTextColumn>
+                <DataGridTextColumn Header="Resultado" Binding="{Binding Result}" Width="120"></DataGridTextColumn>
+                <DataGridTextColumn Header="Tiempo llegada" Binding="{Binding ComingTime}" Width="150"></DataGridTextColumn>
+                <DataGridTextColumn Header="Tiempo Finalizacion" Binding="{Binding FinishTime}" Width="167"></DataGridTextColumn>
+                <DataGridTextColumn Header="Tiempo de retorno" Binding="{Binding ReturnTime}" Width="160"></DataGridTextColumn>
+                <DataGridTextColumn Header="Tiempo de respuesta" Binding="{Binding AswerTime}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Tiempo de espera" Binding="{Binding WaitTime}" Width="160"></DataGridTextColumn>
+                <DataGridTextColumn Header="Tiempo de servicio" Binding="{Binding ServiceTime}" Width="165"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
